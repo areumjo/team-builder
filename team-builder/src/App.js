@@ -4,7 +4,7 @@ import Form from "./components/Form.js";
 import './App.css';
 
 function App() {
-  const [ member, setMember ] = useState({ name:"", nickname:"" });
+  const [ member, setMember ] = useState({ name:"", email:"", role:"" });
   const handleChange = event => {
     setMember({...member, [event.target.name]: event.target.value})
   };
@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       hi {member.name}
-      <Form />
+      <Form handleChange={handleChange} setMember={setMember} member={member}/>
     </div>
   );
 }
