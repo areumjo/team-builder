@@ -8,11 +8,19 @@ function App() {
   const handleChange = event => {
     setMember({...member, [event.target.name]: event.target.value})
   };
+  const memberToEdit = () => {
+    setMember({...member})
+  }
 
   return (
     <div className="App">
       hi {member.name}
-      <Form handleChange={handleChange} setMember={setMember} member={member}/>
+      <Form handleChange={handleChange} setMember={setMember} member={member} memberToEdit={memberToEdit}/>
+      <div>
+        <p>{member.name} {member.role} {member.email}</p>
+        <button onClick={() => memberToEdit()}>Edit</button>
+      </div>
+      
     </div>
   );
 }

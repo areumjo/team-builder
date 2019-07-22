@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
 
 function Form(props) {
     console.log(props);
+    const handleSubmit = event => {
+        event.preventDefault();
+        props.setMember({ name:"", email:"", role:"" });
+    }
     
     return(
-        <form>
+        <form onSubmit={event => handleSubmit(event)}>
             <label>
                 Name:
                <input 
@@ -32,6 +37,7 @@ function Form(props) {
                 onChange={event=>props.handleChange(event)}
                 />
             </label><br/>
+            <button>Submit</button>
         </form>
     )
 }
