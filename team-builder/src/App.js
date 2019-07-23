@@ -3,6 +3,7 @@ import Form from "./components/Form.js";
 
 import './App.css';
 
+
 function App() {
   const [ member, setMember ] = useState({ name:"", email:"", role:"" });
   const handleChange = event => {
@@ -11,16 +12,16 @@ function App() {
   const memberToEdit = () => {
     setMember({...member})
   }
+  console.log('member', member)
 
   return (
     <div className="App">
-      hi {member.name}
+      <h1>Join our team</h1>
       <Form handleChange={handleChange} setMember={setMember} member={member} memberToEdit={memberToEdit}/>
       <div>
         <p>{member.name} {member.role} {member.email}</p>
         <button onClick={() => memberToEdit()}>Edit</button>
       </div>
-      
     </div>
   );
 }

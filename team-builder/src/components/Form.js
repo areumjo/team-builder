@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
 
+import SavedForm from './SavedForm.js';
 
 function Form(props) {
-    console.log(props);
+    console.log(props)
+
     const handleSubmit = event => {
         event.preventDefault();
         props.setMember({ name:"", email:"", role:"" });
     }
-    
+    // useEffect(() => {
+    //     memberToSave()
+    // }, [])
     return(
-        <form onSubmit={event => handleSubmit(event)}>
+        <form onSubmit={handleSubmit}>
             <label>
                 Name:
                <input 
@@ -38,6 +42,7 @@ function Form(props) {
                 />
             </label><br/>
             <button>Submit</button>
+            <SavedForm />
         </form>
     )
 }
