@@ -8,13 +8,14 @@ function Form(props) {
     const handleSubmit = event => {
         // wo prevenDefault, when use clicks submit, page will refresh
         event.preventDefault();
-        props.setMember({ name:"", email:"", role:"" });
+        
+        //setSavedUser({...savedUser, [event.target.name]: event.target.value });
     }
     // useEffect(() => {
-    //     memberToSave()
+    //     setSavedUser()
     // }, [])
     return(
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form-container">
             <label>
                 Name:
                <input 
@@ -43,7 +44,6 @@ function Form(props) {
                 />
             </label><br/>
             <button>Submit</button>
-            <SavedForm />
         </form>
     )
 }

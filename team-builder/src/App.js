@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Form from "./components/Form.js";
+import SavedForm from "./components/SavedForm.js";
 
 import './App.css';
 
@@ -16,14 +17,17 @@ function App() {
   const memberToEdit = () => {
     setMember({...member})
   }
-  console.log('member', member)
-
+  const [savedUser, setSavedUser] = useState({ name:"Darren", email:"dr@darren.com", role:"Team Lead"  });
+  console.log('savedUser:', savedUser)
   return (
     <div className="App">
-      <h1>Join our team</h1>
+      <h1>Join team Darren</h1>
       <Form handleChange={handleChange} setMember={setMember} member={member} memberToEdit={memberToEdit}/>
-      <div>
-        <p>{member.name} {member.role} {member.email}</p>
+      <div className="printed-form">
+        <p>Your name: {member.name}</p>
+        <p>Email: {member.email}</p> 
+        <p>What is your role? {member.role}</p>
+        <SavedForm savedUser={savedUser}/>
         <button onClick={() => memberToEdit()}>Edit</button>
       </div>
     </div>
