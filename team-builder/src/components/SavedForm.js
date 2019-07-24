@@ -4,9 +4,11 @@ function SavedForm(props) {
     console.log("savedForm props:", props);
     return (
         <div>
-            {/* <p>Working? {props.member.name} {props.member.role} {props.member.email}</p> */}
             <h1>Introduce our team</h1>
-            <p>{props.savedUser.role} - {props.savedUser.name}, {props.savedUser.email}</p>
+            {props.savedUser.map(e => <h3>{e.role} {e.name}, email: {e.email}</h3>)}
+            {/* <p>{props.savedUser.map(e => ` ${e.role} ${e.name}, email: ${e.email}`)}</p> */}
+            {/* <p>{props.savedUser.role} - {props.savedUser.name}, {props.savedUser.email}</p> */}
+            {/* <p>{props.savedUser.map(e => e.name)}</p> */}
         </div>
     )
 }
