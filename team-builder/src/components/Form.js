@@ -6,6 +6,7 @@ function Form(props) {
     console.log(props)
 
     const handleSubmit = event => {
+        // wo prevenDefault, when use clicks submit, page will refresh
         event.preventDefault();
         props.setMember({ name:"", email:"", role:"" });
     }

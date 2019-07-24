@@ -6,9 +6,13 @@ import './App.css';
 
 function App() {
   const [ member, setMember ] = useState({ name:"", email:"", role:"" });
+  
   const handleChange = event => {
+    console.log('checking: ', event.target.value)
+    console.log(event.target.name, )
     setMember({...member, [event.target.name]: event.target.value})
   };
+  
   const memberToEdit = () => {
     setMember({...member})
   }
